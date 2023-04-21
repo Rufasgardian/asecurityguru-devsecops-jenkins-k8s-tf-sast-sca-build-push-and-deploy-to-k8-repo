@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: konoha-deployment
+  name: asgbuggy-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: konoha
+      app: asgbuggy
   template:
     metadata:
       labels:
-        app: konoha
+        app: asgbuggy
     spec:
       containers:
-      - name: konoha
+      - name: asgbuggy
         image: 599006410456.dkr.ecr.eu-central-1.amazonaws.com/uzumaki
         imagePullPolicy: Always
         ports:
@@ -24,9 +24,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: konoha
-    k8s-app: konoha
-  name: konoha
+    app: asgbuggy
+    k8s-app: asgbuggy
+  name: asgbuggy
 spec:
   ports:
   - name: http
